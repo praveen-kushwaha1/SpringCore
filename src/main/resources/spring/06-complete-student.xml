@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Regular top-level Address bean -->
+    <bean id="address" class="com.spring._02_di_xml.Address">
+        <property name="houseNumber" value="H-101"/>
+        <property name="city" value="Deoria"/>
+        <property name="state" value="Uttar Pradesh"/>
+        <property name="pinCode" value="274001"/>
+    </bean>
+
+    <!-- Department bean with simple values and collections -->
+    <bean id="department" class="com.spring._02_di_xml.Department">
+        <property name="departmentName" value="Computer Science"/>
+        <property name="hodName" value="Mr. Sharma"/>
+
+        <property name="subjects">
+            <list>
+                <value>Java</value>
+                <value>Spring</value>
+                <value>SQL</value>
+            </list>
+        </property>
+
+        <property name="facilities">
+            <set>
+                <value>Library</value>
+                <value>WiFi</value>
+                <value>Laboratory</value>
+            </set>
+        </property>
+
+        <property name="faculty">
+            <map>
+                <entry key="Java" value="Mr. Kumar"/>
+                <entry key="Spring" value="Ms. Singh"/>
+                <entry key="SQL" value="Mr. Verma"/>
+            </map>
+        </property>
+    </bean>
+
+    <!-- Student bean -->
+    <bean id="student" class="com.spring._02_di_xml.Student">
+
+        <!-- Constructor injection using the top-level Address bean -->
+        <constructor-arg ref="address"/>
+
+        <!-- Simple values are injected through setters -->
+        <property name="studentId" value="101"/>
+        <property name="studentName" value="Praveen"/>
+        <property name="fees" value="25000.0"/>
+
+        <!-- Object dependency through bean reference -->
+        <property name="department" ref="department"/>
+
+        <!-- List injection -->
+        <property name="skills">
+            <list>
+                <value>Java</value>
+                <value>Spring Core</value>
+                <value>Spring Boot</value>
+            </list>
+        </property>
+
+        <!-- Set injection -->
+        <property name="certifications">
+            <set>
+                <value>Java</value>
+                <value>SQL</value>
+                <value>Spring</value>
+            </set>
+        </property>
+
+        <!-- Map injection -->
+        <property name="marks">
+            <map>
+                <entry key="Java" value="90"/>
+                <entry key="Spring" value="85"/>
+                <entry key="SQL" value="88"/>
+            </map>
+        </property>
+
+    </bean>
+
+</beans>
