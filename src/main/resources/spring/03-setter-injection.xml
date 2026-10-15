@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Address is created using the no-argument constructor -->
+    <bean id="address" class="com.spring._02_di_xml.Address">
+        <property name="houseNumber" value="H-101"/>
+        <property name="city" value="Deoria"/>
+        <property name="state" value="Uttar Pradesh"/>
+        <property name="pinCode" value="274001"/>
+    </bean>
+
+    <bean id="department" class="com.spring._02_di_xml.Department">
+        <property name="departmentName" value="Computer Science"/>
+        <property name="hodName" value="Mr. Sharma"/>
+    </bean>
+
+    <!-- Student is created with its Address constructor argument.
+         Remaining properties are injected through setters. -->
+    <bean id="student" class="com.spring._02_di_xml.Student">
+        <constructor-arg ref="address"/>
+
+        <property name="studentId" value="102"/>
+        <property name="studentName" value="Amit"/>
+        <property name="fees" value="30000.0"/>
+
+        <property name="department" ref="department"/>
+    </bean>
+
+</beans>

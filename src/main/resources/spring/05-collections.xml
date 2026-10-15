@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.spring._02_di_xml.Address">
+        <property name="city" value="Deoria"/>
+        <property name="state" value="Uttar Pradesh"/>
+        <property name="houseNumber" value="H-101"/>
+        <property name="pinCode" value="274001"/>
+    </bean>
+
+    <bean id="department" class="com.spring._02_di_xml.Department">
+        <property name="departmentName" value="Computer Science"/>
+        <property name="hodName" value="Mr. Sharma"/>
+
+        <!-- LIST: ordered collection; duplicates are allowed -->
+        <property name="subjects">
+            <list>
+                <value>Java</value>
+                <value>Spring</value>
+                <value>SQL</value>
+                <value>Java</value>
+            </list>
+        </property>
+
+        <!-- SET: unique elements; iteration order is not guaranteed -->
+        <property name="facilities">
+            <set>
+                <value>Library</value>
+                <value>Laboratory</value>
+                <value>WiFi</value>
+                <value>Library</value>
+            </set>
+        </property>
+
+        <!-- MAP: each entry has a key and a value -->
+        <property name="faculty">
+            <map>
+                <entry key="Java" value="Mr. Kumar"/>
+                <entry key="Spring" value="Ms. Singh"/>
+                <entry key="SQL" value="Mr. Verma"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="student" class="com.spring._02_di_xml.Student">
+        <constructor-arg ref="address"/>
+
+        <property name="studentId" value="104"/>
+        <property name="studentName" value="Neha"/>
+        <property name="fees" value="28000.0"/>
+
+        <property name="department" ref="department"/>
+
+        <!-- List of skills -->
+        <property name="skills">
+            <list>
+                <value>Core Java</value>
+                <value>Spring Core</value>
+                <value>Spring Boot</value>
+            </list>
+        </property>
+
+        <!-- Set of certifications -->
+        <property name="certifications">
+            <set>
+                <value>Java</value>
+                <value>SQL</value>
+                <value>Spring</value>
+            </set>
+        </property>
+
+        <!-- Map of subject names to marks -->
+        <property name="marks">
+            <map>
+                <entry key="Java" value="90"/>
+                <entry key="Spring" value="85"/>
+                <entry key="SQL" value="88"/>
+            </map>
+        </property>
+
+    </bean>
+
+</beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Spring XML configuration file.
+
+    The beans element is the root element for bean definitions.
+    Spring reads this file to learn which objects it should manage.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+        id = bean identifier used by getBean() and ref.
+        class = fully qualified Java class name.
+    -->
+    <bean id="address" class="com.spring._02_di_xml.Address"/>
+
+    <bean id="department" class="com.spring._02_di_xml.Department"/>
+
+</beans>

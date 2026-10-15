@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="department" class="com.spring._02_di_xml.Department">
+        <property name="departmentName" value="Computer Science"/>
+        <property name="hodName" value="Mr. Sharma"/>
+    </bean>
+
+    <bean id="student" class="com.spring._02_di_xml.Student">
+
+        <!-- Inner Address bean: no separate top-level address id -->
+        <constructor-arg>
+            <bean class="com.spring._02_di_xml.Address">
+                <property name="houseNumber" value="H-202"/>
+                <property name="city" value="Gorakhpur"/>
+                <property name="state" value="Uttar Pradesh"/>
+                <property name="pinCode" value="273001"/>
+            </bean>
+        </constructor-arg>
+
+        <property name="studentId" value="103"/>
+        <property name="studentName" value="Rahul"/>
+        <property name="fees" value="20000.0"/>
+
+        <property name="department" ref="department"/>
+
+    </bean>
+
+</beans>
