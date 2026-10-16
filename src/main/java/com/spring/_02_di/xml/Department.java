@@ -1,4 +1,4 @@
-package com.spring._02_di_xml;
+package com.spring._02_di.xml;
 
 import java.util.List;
 import java.util.Map;

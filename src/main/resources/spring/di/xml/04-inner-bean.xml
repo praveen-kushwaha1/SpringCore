@@ -6,16 +6,16 @@
            http://www.springframework.org/schema/beans
            https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="department" class="com.spring._02_di_xml.Department">
+    <bean id="department" class="com.spring._02_di.xml.Department">
         <property name="departmentName" value="Computer Science"/>
         <property name="hodName" value="Mr. Sharma"/>
     </bean>
 
-    <bean id="student" class="com.spring._02_di_xml.Student">
+    <bean id="student" class="com.spring._02_di.xml.Student">
 
         <!-- Inner Address bean: no separate top-level address id -->
         <constructor-arg>
-            <bean class="com.spring._02_di_xml.Address">
+            <bean class="com.spring._02_di.xml.Address">
                 <property name="houseNumber" value="H-202"/>
                 <property name="city" value="Gorakhpur"/>
                 <property name="state" value="Uttar Pradesh"/>

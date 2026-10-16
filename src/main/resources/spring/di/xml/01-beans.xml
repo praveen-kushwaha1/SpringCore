@@ -15,8 +15,8 @@
         id = bean identifier used by getBean() and ref.
         class = fully qualified Java class name.
     -->
-    <bean id="address" class="com.spring._02_di_xml.Address"/>
+    <bean id="address" class="com.spring._02_di.xml.Address"/>
 
-    <bean id="department" class="com.spring._02_di_xml.Department"/>
+    <bean id="department" class="com.spring._02_di.xml.Department"/>
 
 </beans>

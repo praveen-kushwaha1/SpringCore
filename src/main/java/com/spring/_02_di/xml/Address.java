@@ -1,4 +1,4 @@
-package com.spring._02_di_xml;
+package com.spring._02_di.xml;
 
 /**
  * Address is a normal Java class.

@@ -1,4 +1,4 @@
-package com.spring._02_di_xml;
+package com.spring._02_di.xml;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -15,7 +15,7 @@ public class App {
     public static void main(String[] args) {
 
         // Default configuration used for the complete example.
-        String configFile = "spring/06-complete-student.xml";
+        String configFile = "spring/di/xml/06-complete-student.xml";
 
         // Optional command-line argument lets us run another example.
         if (args.length > 0) {
