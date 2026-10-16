@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           https://www.springframework.org/schema/context/spring-context.xsd
+           http://www.springframework.org/schema/util
+           https://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- Discovers @Component classes in this package and its subpackages. -->
+    <context:component-scan
+            base-package="com.spring._04_stereotype_annot"/>
+
+    <!-- Registers a List bean with the ID "ad". -->
+    <util:list id="ad" list-class="java.util.ArrayList">
+        <value>India</value>
+        <value>USA</value>
+        <value>UK</value>
+    </util:list>
+
+</beans>
