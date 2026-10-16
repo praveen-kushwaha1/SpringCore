@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- Bean name matches the Student property name: address -->
+    <bean id="address" class="com.spring._02_di.autowire.xml.byname.Address">
+        <property name="city" value="Pune"/>
+        <property name="state" value="Maharashtra"/>
+    </bean>
+
+    <!-- Spring finds the Address bean by the property name -->
+    <bean id="st"
+          class="com.spring._02_di.autowire.xml.byname.Student"
+          autowire="byName"/>
+
+</beans>
