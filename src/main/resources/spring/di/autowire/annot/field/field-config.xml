@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+           https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Enables processing of @Autowired and @Qualifier. -->
+    <context:annotation-config/>
+
+    <bean id="ad" class="com.spring._02_di.autowire.annot.field.Address">
+        <property name="city" value="Pune"/>
+        <property name="state" value="Maharashtra"/>
+    </bean>
+
+<!--    <bean id="ad2" class="com.spring._02_di.autowire.annot.field.Address">-->
+<!--        <property name="city" value="Bhubaneswar"/>-->
+<!--        <property name="state" value="Odisha"/>-->
+<!--    </bean>-->
+
+    <bean id="st" class="com.spring._02_di.autowire.annot.field.Student"/>
+
+</beans>
