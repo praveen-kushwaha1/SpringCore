@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- The bean name does not need to match the property name -->
+    <bean id="ad"
+          class="com.spring._02_di.autowire.xml.bytype.Address">
+        <property name="city" value="Lucknow"/>
+        <property name="state" value="Uttar Pradesh"/>
+    </bean>
+
+    <!-- Spring matches the Address type -->
+    <bean id="st"
+          class="com.spring._02_di.autowire.xml.bytype.Student"
+          autowire="byType"/>
+
+</beans>
