@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Spring XML configuration file.
+
+    The beans element is the root element for bean definitions.
+    Spring reads this file to learn which objects it should manage.
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="st" class="com.spring._03_bean_lifecycle.usingprovideinterface.Student">
+        <property name="id" value="1" />
+        <property name="name" value="praveen" />
+    </bean>
+
+    <bean name="annot" class="com.spring._03_bean_lifecycle.annotbased.Student">
+        <property name="id" value="1" />
+        <property name="name" value="praveen" />
+    </bean>
+
+</beans>
